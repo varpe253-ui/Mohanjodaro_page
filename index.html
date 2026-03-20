@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohenjo-daro – Mound of the Dead</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand:   #f2e8d5;
+      --clay:   #c9a96e;
+      --brick:  #8b3a2a;
+      --earth:  #3b2a1a;
+      --smoke:  #f7f2ea;
+      --accent: #d4642e;
+    }
+
+    body {
+      background-color: var(--sand);
+      color: var(--earth);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--earth);
+      overflow: hidden;
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,255,255,.04) 28px, rgba(255,255,255,.04) 29px),
+        repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(255,255,255,.04) 28px, rgba(255,255,255,.04) 29px);
+    }
+    .hero-label {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 12px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--clay);
+      border: 1px solid var(--clay);
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--sand);
+      letter-spacing: .05em;
+      line-height: 1.15;
+    }
+    .hero h1 em {
+      display: block;
+      font-style: normal;
+      font-size: .45em;
+      font-weight: 400;
+      color: var(--clay);
+      letter-spacing: .2em;
+      margin-top: .5rem;
+    }
+
+    /* ── IMAGE ──────────────────────────────────────────── */
+    .image-wrap {
+      max-width: 820px;
+      margin: -2.5rem auto 0;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .image-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      border: 4px solid var(--sand);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    .img-caption {
+      font-style: italic;
+      font-size: 14px;
+      color: #7a6040;
+      text-align: center;
+      margin-top: .6rem;
+    }
+
+    /* ── CONTENT ────────────────────────────────────────── */
+    .content {
+      max-width: 780px;
+      margin: 3.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--brick);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin: 2.8rem 0 .9rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--clay);
+      opacity: .5;
+    }
+
+    p { margin-bottom: 1.1rem; }
+
+    /* ── FACTS LIST ─────────────────────────────────────── */
+    .facts-box {
+      background: var(--smoke);
+      border-left: 4px solid var(--brick);
+      padding: 1.4rem 1.8rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .facts-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .facts-box ul li {
+      padding: .45rem 0 .45rem 1.6rem;
+      position: relative;
+      border-bottom: 1px dashed rgba(139,58,42,.2);
+      font-size: 17px;
+    }
+    .facts-box ul li:last-child { border-bottom: none; }
+    .facts-box ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 14px;
+      top: .55rem;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: var(--earth);
+      color: var(--clay);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 14px;
+      letter-spacing: .08em;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+    }
+    footer strong { color: var(--sand); font-style: normal; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-label">UNESCO World Heritage Site · Est. c. 2500 BCE</div>
+    <h1>
+      Mohenjo-daro
+      <em>Mound of the Dead Men</em>
+    </h1>
+  </header>
+
+  <!-- IMAGE -->
+  <div class="image-wrap">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mohenjodaro_Sindh.jpeg/1280px-Mohenjodaro_Sindh.jpeg"
+      alt="Aerial view of Mohenjo-daro ruins in Sindh, Pakistan"
+    />
+    <p class="img-caption">The Great Bath and surrounding ruins — Mohenjo-daro, Sindh, Pakistan</p>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <h2 class="section-title">What is Mohenjo-daro?</h2>
+    <p>
+      Mohenjo-daro is one of the largest and best-preserved urban settlements of the ancient Indus Valley Civilisation, also known as the Harappan Civilisation. Built around 2500 BCE, it was one of the world's earliest major cities, rivalling contemporary settlements in ancient Egypt and Mesopotamia in size, sophistication, and civic planning.
+    </p>
+    <p>
+      The name <em>Mohenjo-daro</em> means "Mound of the Dead Men" in Sindhi. The city lay buried and forgotten for thousands of years until its dramatic rediscovery in the 1920s by British-Indian archaeologist R. D. Banerji, forever changing our understanding of early human civilisation.
+    </p>
+
+    <h2 class="section-title">Location & History</h2>
+    <p>
+      Mohenjo-daro is situated in the Larkana District of Sindh province in present-day Pakistan, on the right bank of the Indus River. The site covers approximately 300 hectares and is believed to have housed a population of up to 40,000 people at its height — an extraordinary feat for the third millennium BCE.
+    </p>
+    <p>
+      The city thrived between 2500 BCE and 1900 BCE before mysteriously declining. Historians debate the cause — theories range from climate change and river flooding to invasion and disease. The Indus script found on thousands of artefacts here remains undeciphered to this day, making Mohenjo-daro one of history's greatest unsolved puzzles.
+    </p>
+
+    <h2 class="section-title">Historical Importance</h2>
+    <p>
+      Mohenjo-daro stands as extraordinary evidence of an advanced Bronze Age civilisation that pre-dates written Indian history. Its grid-patterned streets, sophisticated drainage systems, and multi-storey brick structures reveal a level of urban planning not seen again in the Indian subcontinent for nearly two millennia. The famous Great Bath — a large public water tank — suggests a culture with complex social rituals and communal life.
+    </p>
+    <p>
+      Recognised as a UNESCO World Heritage Site in 1980, Mohenjo-daro is a cornerstone of South Asian archaeology. The artefacts found there — including the iconic "Dancing Girl" bronze statuette and hundreds of carved seals — provide a vivid window into one of humanity's foundational civilisations.
+    </p>
+
+    <h2 class="section-title">Interesting Facts</h2>
+    <div class="facts-box">
+      <ul>
+        <li>Mohenjo-daro's streets were laid out in a near-perfect grid, with wide main roads and narrower lanes — a planning achievement unmatched for its era.</li>
+        <li>Almost every house had its own private bathroom and was connected to a city-wide covered drainage and sewage system.</li>
+        <li>The Great Bath measures 12 × 7 metres and is watertight, lined with bitumen — possibly used for ritual purification.</li>
+        <li>The famous bronze "Dancing Girl" figurine, just 10.5 cm tall, was crafted around 2300 BCE and is now held in the National Museum of India.</li>
+        <li>No weapons of war have ever been found at the site, leading some historians to believe it was a remarkably peaceful civilisation.</li>
+        <li>The Indus script on thousands of seals and tablets has never been deciphered, keeping much of its history a mystery.</li>
+        <li>Mohenjo-daro is on UNESCO's list of endangered heritage sites due to rising salinity and waterlogging eroding the ancient brickwork.</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Mohenjo-daro</strong> &mdash; A lost city that once stood at the dawn of civilisation &bull; c. 2500 BCE &bull; Sindh, Pakistan
+  </footer>
+
+</body>
+</html>
